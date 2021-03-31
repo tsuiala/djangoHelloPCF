@@ -1,0 +1,7 @@
+---
+applications:
+- name: djangoHelloPCF
+  memory: 512M
+  instances: 1
+  buildpack: python_buildpack
+  command: python3 manage.py collectstatic --noinput && gunicorn djangoHelloPCF.wsgi:application
